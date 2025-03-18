@@ -1,66 +1,69 @@
 <div class="container">
-  <nz-space class="content " [nzSize]="48" [nzDirection]="'vertical'">
+  <nz-space class="content" [nzSize]="48" [nzDirection]="'vertical'">
     <app-header *nzSpaceItem></app-header>
     <div class="px-20" *nzSpaceItem>
-      <div nz-row nzJustify="center">
-        <div nz-col nzSpan="8">
-          <nz-steps
-            [nzCurrent]="index"
-            nzDirection="vertical"
-            (nzIndexChange)="cambiar($event)"
-          >
-            <nz-step
-              [nzStatus]="index === 0 ? 'process' : 'wait'"
-              nzTitle="Datos para la Inversión"
-              nzDescription="Datos básicos de la Inversión"
-            ></nz-step>
-            <nz-step
-              [nzStatus]="index === 1 ? 'process' : 'wait'"
-              nzTitle="Datos del Partícipe"
-              nzDescription="Datos básicos del Partícipe"
-            ></nz-step>
-            <nz-step
-              [nzStatus]="index === 2 ? 'process' : 'wait'"
-              nzTitle="Cuentas Bancarias"
-              nzDescription="Datos de Cuentas Bancarias"
-            ></nz-step>
-            <nz-step
-              [nzStatus]="index === 3 ? 'process' : 'wait'"
-              nzTitle="Vinculación"
-              nzDescription="Vinculación con CONEXA"
-            ></nz-step>
-            <nz-step
-              [nzStatus]="index === 4 ? 'process' : 'wait'"
-              nzTitle="Origen de Fondos"
-              nzDescription="Declaración Jurada de Origen de Fondos"
-            ></nz-step>
-            <nz-step
-              [nzStatus]="index === 5 ? 'process' : 'wait'"
-              nzTitle="Persona Políticamente Expuesta"
-              nzDescription="Condición de Persona Politicamente Expuesta"
-            ></nz-step>
-            <nz-step
-              [nzStatus]="index === 6 ? 'process' : 'wait'"
-              nzTitle="Subida de documentos"
-              nzDescription="Subir archivos de tu documento de identidad"
-            ></nz-step>
-          </nz-steps>
-        </div>
-        <div nz-col nzSpan="16">
-         <span>Paso {{index+1}}/7</span>
-          @switch(index){ @case (0){
-          <app-data-inversion></app-data-inversion>
-          } @case (1){
-          } @case (2){
-          } @case (3){
-          } @case (4){
-          } @case (5){
-          } @case (6){
-          } }
+      <div class="content-main">
+        <div nz-row nzJustify="center" class="content-main-form">
+          <div nz-col nzSpan="8">
+            <nz-steps
+              [nzCurrent]="index"
+              nzDirection="vertical"
+              (nzIndexChange)="cambiar($event)"
+            >
+              <nz-step
+                [nzStatus]="index === 0 ? 'process' : 'wait'"
+                nzTitle="Datos para la Inversión"
+                nzDescription="Datos básicos de la Inversión"
+              ></nz-step>
+              <nz-step
+                [nzStatus]="index === 1 ? 'process' : 'wait'"
+                nzTitle="Datos del Partícipe"
+                nzDescription="Datos básicos del Partícipe"
+              ></nz-step>
+              <nz-step
+                [nzStatus]="index === 2 ? 'process' : 'wait'"
+                nzTitle="Cuentas Bancarias"
+                nzDescription="Datos de Cuentas Bancarias"
+              ></nz-step>
+              <nz-step
+                [nzStatus]="index === 3 ? 'process' : 'wait'"
+                nzTitle="Vinculación"
+                nzDescription="Vinculación con CONEXA"
+              ></nz-step>
+              <nz-step
+                [nzStatus]="index === 4 ? 'process' : 'wait'"
+                nzTitle="Origen de Fondos"
+                nzDescription="Declaración Jurada de Origen de Fondos"
+              ></nz-step>
+              <nz-step
+                [nzStatus]="index === 5 ? 'process' : 'wait'"
+                nzTitle="Persona Políticamente Expuesta"
+                nzDescription="Condición de Persona Politicamente Expuesta"
+              ></nz-step>
+              <nz-step
+                [nzStatus]="index === 6 ? 'process' : 'wait'"
+                nzTitle="Subida de documentos"
+                nzDescription="Subir archivos de tu documento de identidad"
+              ></nz-step>
+            </nz-steps>
+          </div>
+          <div nz-col nzSpan="16">
+            <nz-space [nzSize]="4" nzDirection="vertical" class="w-100">
+              <div *nzSpaceItem>
+                <span>Paso {{ index + 1 }}/7</span>
+              </div>
+              <div *nzSpaceItem>
+                @switch(index){ @case (0){
+                <app-data-inversion></app-data-inversion>
+                } @case (1){ } @case (2){ } @case (3){ } @case (4){ } @case (5){
+                } @case (6){ } }
+              </div>
+            </nz-space>
+          </div>
         </div>
       </div>
     </div>
   </nz-space>
-  
+
   <app-footer></app-footer>
 </div>

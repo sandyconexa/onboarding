@@ -1,10 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzSpaceModule } from 'ng-zorro-antd/space';
+import { NzCardModule } from 'ng-zorro-antd/card';
+
 
 @Component({
   selector: 'app-data-inversion',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,NzSpaceModule,NzGridModule,NzIconModule, NzButtonModule,NzCardModule],
   templateUrl: './data-inversion.component.html',
   styleUrl: './data-inversion.component.scss',
 })

@@ -1,3 +1,82 @@
+<nz-space [nzSize]="12" nzDirection="vertical" class="w-100">
+  <div *nzSpaceItem>
+    <h2>Datos básicos de la Inversión</h2>
+    <span>Datos Básicos para el contrato de Inversión:</span>
+  </div>
 
-<h2>Datos básicos de la Inversión</h2>
-<span>Datos Básicos para el contrato de Inversión:</span>
+  <nz-space [nzSize]="2" nzDirection="vertical" class="w-100" *nzSpaceItem>
+    <div nz-space [nzSize]="8" *nzSpaceItem>
+      <span *nzSpaceItem>Tipo de Particpe: </span>
+      <i
+        nz-icon
+        nzType="info-circle"
+        nzTheme="outline"
+        nzTheme="twotone"
+        *nzSpaceItem
+      ></i>
+    </div>
+
+    <div nz-row [nzGutter]="24" *nzSpaceItem>
+      <div nz-col [nzSpan]="12">
+        <nz-card>
+            <div nz-row [nzGutter]="16" nzAlign="middle">
+                <div nz-col>
+                    1
+                </div>
+                <div nz-col>
+                    <div nz-row>Partícipe Clase A</div>
+                    <div nz-row>Mayor rendimiento objetivo</div>
+                </div>
+            </div>
+        </nz-card>
+      </div>
+      <div nz-col [nzSpan]="12">
+        <nz-card>
+            <div nz-row [nzGutter]="16" nzAlign="middle">
+                <div nz-col>
+                    1
+                </div>
+                <div nz-col>
+                    <div nz-row>Partícipe Clase B</div>
+                    <div nz-row>Rendimiento fijo garantizado</div>
+                </div>
+            </div>
+        </nz-card>
+      </div>
+    </div>
+  </nz-space>
+
+  <nz-space [nzSize]="2" nzDirection="vertical" class="w-100" *nzSpaceItem>
+    <div *nzSpaceItem>
+      <span>Moneda de la Inversión:</span>
+    </div>
+    <div nz-row [nzGutter]="24" *nzSpaceItem>
+      <div nz-col [nzSpan]="12">
+        <nz-card>
+            <div nz-row [nzGutter]="16" nzAlign="middle">
+                <div nz-col>
+                    1
+                </div>
+                <div nz-col>
+                    <div nz-row>PEN</div>
+                    <div nz-row>Contrato de Inversión PEN</div>
+                </div>
+            </div>
+        </nz-card>
+      </div>
+      <div nz-col [nzSpan]="12">
+        <nz-card>
+            <div nz-row [nzGutter]="16" nzAlign="middle">
+                <div nz-col>
+                    1
+                </div>
+                <div nz-col>
+                    <div nz-row>USD</div>
+                    <div nz-row>Contrato de Inversión USD</div>
+                </div>
+            </div>
+        </nz-card>
+      </div>
+    </div>
+  </nz-space>
+</nz-space>
