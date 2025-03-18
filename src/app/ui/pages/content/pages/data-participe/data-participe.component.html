@@ -1,6 +1,7 @@
+<h2>Datos básicos del Partícipe</h2>
+<span>Datos del Partícipe</span>
+
 <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
-
-
   <nz-form-item>
     <nz-form-label
       [nzSm]="6"
@@ -32,20 +33,19 @@
       nzRequired
       [nzTooltipIcon]="captchaTooltipIcon"
     >
-    Número
+      Número
     </nz-form-label>
 
     <nz-form-control
-    [nzSm]="12"
-    [nzXs]="24"
-    nzErrorTip="Please input the captcha you got!"
-  >
+      [nzSm]="12"
+      [nzXs]="24"
+      nzErrorTip="Please input the captcha you got!"
+    >
       <nz-input-group>
         <input type="text" nz-input placeholder="Número de documento" />
       </nz-input-group>
     </nz-form-control>
   </nz-form-item>
-
 
   <nz-form-item>
     <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="password" nzRequired
@@ -66,14 +66,10 @@
   </nz-form-item>
   <nz-form-item>
     <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="checkPassword" nzRequired
-      >Apellido Paterno </nz-form-label
-    >
+      >Apellido Paterno
+    </nz-form-label>
     <nz-form-control [nzSm]="5" [nzXs]="24" [nzErrorTip]="errorTpl">
-      <input
-        nz-input
-        type="password"
-        formControlName="checkPassword"
-      />
+      <input nz-input type="password" formControlName="checkPassword" />
       <ng-template #errorTpl let-control>
         @if (control.errors?.['required']) { Please confirm your password! } @if
         (control.errors?.['confirm']) { Two passwords that you enter is
@@ -83,10 +79,9 @@
   </nz-form-item>
 
   <nz-form-item>
-    <nz-form-label [nzSm]="5
-" [nzXs]="24" nzFor="checkPassword" nzRequired
-      >Apellido Paterno </nz-form-label
-    >
+    <nz-form-label [nzSm]="5" [nzXs]="24" nzFor="checkPassword" nzRequired
+      >Apellido Paterno
+    </nz-form-label>
     <nz-form-control [nzSm]="14" [nzXs]="24" [nzErrorTip]="errorTpl">
       <input
         nz-input
@@ -101,7 +96,6 @@
       </ng-template>
     </nz-form-control>
   </nz-form-item>
-
 
   <nz-form-item>
     <nz-form-label
@@ -156,7 +150,6 @@
     </nz-form-control>
   </nz-form-item>
 
-
   <form nz-form nzLayout="vertical">
     <nz-form-item>
       <nz-form-label [nzSpan]="false ? 4 : null">Field A</nz-form-label>
@@ -177,7 +170,6 @@
       </nz-form-control>
     </nz-form-item>
   </form>
-
 
   <!-- <nz-form-item>
     <nz-form-label
@@ -206,5 +198,4 @@
       </div>
     </nz-form-control>
   </nz-form-item> -->
-
 </form>
