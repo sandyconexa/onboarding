@@ -1,16 +1,5 @@
 <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
-  <nz-form-item>
-    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email"
-      >E-mail</nz-form-label
-    >
-    <nz-form-control
-      [nzSm]="14"
-      [nzXs]="24"
-      nzErrorTip="The input is not valid E-mail!"
-    >
-      <input nz-input formControlName="email" id="email" />
-    </nz-form-control>
-  </nz-form-item>
+
 
   <nz-form-item>
     <nz-form-label
@@ -25,7 +14,7 @@
     </nz-form-label>
 
     <nz-form-control
-      [nzSm]="10"
+      [nzSm]="8"
       [nzXs]="24"
       nzErrorTip="Please input the captcha you got!"
     >
@@ -47,7 +36,7 @@
     </nz-form-label>
 
     <nz-form-control
-    [nzSm]="16"
+    [nzSm]="12"
     [nzXs]="24"
     nzErrorTip="Please input the captcha you got!"
   >
@@ -60,10 +49,10 @@
 
   <nz-form-item>
     <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="password" nzRequired
-      >Password</nz-form-label
+      >Nombres</nz-form-label
     >
     <nz-form-control
-      [nzSm]="14"
+      [nzSm]="10"
       [nzXs]="24"
       nzErrorTip="Please input your password!"
     >
@@ -77,7 +66,26 @@
   </nz-form-item>
   <nz-form-item>
     <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="checkPassword" nzRequired
-      >Confirm Password</nz-form-label
+      >Apellido Paterno </nz-form-label
+    >
+    <nz-form-control [nzSm]="5" [nzXs]="24" [nzErrorTip]="errorTpl">
+      <input
+        nz-input
+        type="password"
+        formControlName="checkPassword"
+      />
+      <ng-template #errorTpl let-control>
+        @if (control.errors?.['required']) { Please confirm your password! } @if
+        (control.errors?.['confirm']) { Two passwords that you enter is
+        inconsistent! }
+      </ng-template>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSm]="5
+" [nzXs]="24" nzFor="checkPassword" nzRequired
+      >Apellido Paterno </nz-form-label
     >
     <nz-form-control [nzSm]="14" [nzXs]="24" [nzErrorTip]="errorTpl">
       <input
@@ -93,6 +101,8 @@
       </ng-template>
     </nz-form-control>
   </nz-form-item>
+
+
   <nz-form-item>
     <nz-form-label
       [nzSm]="6"
@@ -145,7 +155,31 @@
       />
     </nz-form-control>
   </nz-form-item>
-  <nz-form-item>
+
+
+  <form nz-form nzLayout="vertical">
+    <nz-form-item>
+      <nz-form-label [nzSpan]="false ? 4 : null">Field A</nz-form-label>
+      <nz-form-control
+        [nzSpan]="false ? 10 : null"
+        nzErrorTip="Please input your username!"
+      >
+        <input nz-input placeholder="input placeholder" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="false ? 4 : null">Field B</nz-form-label>
+      <nz-form-control
+        [nzSpan]="false ? 10 : null"
+        nzErrorTip="Please input your Password!"
+      >
+        <input nz-input placeholder="input placeholder" />
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+
+
+  <!-- <nz-form-item>
     <nz-form-label
       [nzSm]="6"
       [nzXs]="24"
@@ -171,20 +205,6 @@
         </div>
       </div>
     </nz-form-control>
-  </nz-form-item>
-  <nz-form-item nz-row class="register-area">
-    <nz-form-control [nzSpan]="14" [nzOffset]="6">
-      <label nz-checkbox formControlName="agree">
-        <span>
-          I have read the
-          <a>agreement</a>
-        </span>
-      </label>
-    </nz-form-control>
-  </nz-form-item>
-  <nz-form-item nz-row class="register-area">
-    <nz-form-control [nzSpan]="14" [nzOffset]="6">
-      <button nz-button nzType="primary">Register</button>
-    </nz-form-control>
-  </nz-form-item>
+  </nz-form-item> -->
+
 </form>
