@@ -1,201 +1,120 @@
 <h2>Datos básicos del Partícipe</h2>
 <span>Datos del Partícipe</span>
 
-<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+<!-- <form nz-form nzLayout="vertical">
   <nz-form-item>
-    <nz-form-label
-      [nzSm]="6"
-      [nzXs]="12"
-      nzFor="captcha"
-      nzRequired
-      nzTooltipTitle="Please click 'Get captcha'"
-      [nzTooltipIcon]="captchaTooltipIcon"
-    >
-      Tipo Documento
-    </nz-form-label>
-
+    <nz-form-label [nzSm]="6" [nzXs]="6" >Field A</nz-form-label>
     <nz-form-control
-      [nzSm]="8"
-      [nzXs]="24"
-      nzErrorTip="Please input the captcha you got!"
+    [nzSm]="6" [nzXs]="6"
+      nzErrorTip="Please input your username!"
     >
-      <nz-select ngModel="tipoDocumento">
-        <nz-option nzValue="dni" nzLabel="DNI"></nz-option>
-        <nz-option nzValue="carnet" nzLabel="Carnet de Extranjeria"></nz-option>
-        <nz-option nzValue="disabled" nzLabel="Disabled" nzDisabled></nz-option>
-      </nz-select>
+      <input nz-input placeholder="input placeholder" />
     </nz-form-control>
-
-    <nz-form-label
-      [nzSm]="6"
-      [nzXs]="12"
-      nzFor="captcha"
-      nzRequired
-      [nzTooltipIcon]="captchaTooltipIcon"
-    >
-      Número
-    </nz-form-label>
-
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="6" >Field B</nz-form-label>
     <nz-form-control
-      [nzSm]="12"
-      [nzXs]="24"
-      nzErrorTip="Please input the captcha you got!"
+    [nzSm]="6" [nzXs]="6"
+      nzErrorTip="Please input your Password!"
     >
-      <nz-input-group>
-        <input type="text" nz-input placeholder="Número de documento" />
-      </nz-input-group>
+      <input nz-input placeholder="input placeholder" />
     </nz-form-control>
   </nz-form-item>
+</form> -->
 
-  <nz-form-item>
-    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="password" nzRequired
-      >Nombres</nz-form-label
-    >
-    <nz-form-control
-      [nzSm]="10"
-      [nzXs]="24"
-      nzErrorTip="Please input your password!"
-    >
-      <input
-        nz-input
-        type="password"
-        id="password"
-        formControlName="password"
-      />
-    </nz-form-control>
-  </nz-form-item>
-  <nz-form-item>
-    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="checkPassword" nzRequired
-      >Apellido Paterno
-    </nz-form-label>
-    <nz-form-control [nzSm]="5" [nzXs]="24" [nzErrorTip]="errorTpl">
-      <input nz-input type="password" formControlName="checkPassword" />
-      <ng-template #errorTpl let-control>
-        @if (control.errors?.['required']) { Please confirm your password! } @if
-        (control.errors?.['confirm']) { Two passwords that you enter is
-        inconsistent! }
-      </ng-template>
-    </nz-form-control>
-  </nz-form-item>
 
-  <nz-form-item>
-    <nz-form-label [nzSm]="5" [nzXs]="24" nzFor="checkPassword" nzRequired
-      >Apellido Paterno
-    </nz-form-label>
-    <nz-form-control [nzSm]="14" [nzXs]="24" [nzErrorTip]="errorTpl">
-      <input
-        nz-input
-        type="password"
-        formControlName="checkPassword"
-        id="checkPassword"
-      />
-      <ng-template #errorTpl let-control>
-        @if (control.errors?.['required']) { Please confirm your password! } @if
-        (control.errors?.['confirm']) { Two passwords that you enter is
-        inconsistent! }
-      </ng-template>
-    </nz-form-control>
-  </nz-form-item>
+<div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }" >
+  <div nz-col class="gutter-row" [nzSpan]="12"><div class="inner-box" style="background-color: blanchedalmond;">col-6
+    <button nz-button nzType="default">Persona Natural</button>
+  </div>
+</div>
+  <div nz-col class="gutter-row" [nzSpan]="12"><div class="inner-box">col-6
+    <button nz-button nzType="default">Persona Jurídica</button>
+  </div>
+</div>
+</div>
 
-  <nz-form-item>
-    <nz-form-label
-      [nzSm]="6"
-      [nzXs]="24"
-      nzFor="nickname"
-      nzRequired
-      nzTooltipTitle="What do you want other to call you"
-    >
-      <span>Nickname</span>
-    </nz-form-label>
-    <nz-form-control
-      [nzSm]="14"
-      [nzXs]="24"
-      nzErrorTip="Please input your nickname!"
-    >
-      <input nz-input id="nickname" formControlName="nickname" />
-    </nz-form-control>
-  </nz-form-item>
-  <nz-form-item>
-    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="phoneNumber" nzRequired
-      >Phone Number</nz-form-label
-    >
-    <nz-form-control
-      [nzSm]="14"
-      [nzXs]="24"
-      [nzValidateStatus]="validateForm.controls['phoneNumber']"
-      nzErrorTip="Please input your phone number!"
-    >
-      <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate">
-        <ng-template #addOnBeforeTemplate>
-          <nz-select formControlName="phoneNumberPrefix" class="phone-select">
-            <nz-option nzLabel="+86" nzValue="+86"></nz-option>
-            <nz-option nzLabel="+87" nzValue="+87"></nz-option>
-          </nz-select>
-        </ng-template>
-        <input formControlName="phoneNumber" id="'phoneNumber'" nz-input />
-      </nz-input-group>
-    </nz-form-control>
-  </nz-form-item>
-  <nz-form-item>
-    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="website" nzRequired
-      >Website</nz-form-label
-    >
-    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input website!">
-      <input
-        nz-input
-        id="website"
-        formControlName="website"
-        placeholder="website"
-      />
-    </nz-form-control>
-  </nz-form-item>
 
-  <form nz-form nzLayout="vertical">
-    <nz-form-item>
-      <nz-form-label [nzSpan]="false ? 4 : null">Field A</nz-form-label>
-      <nz-form-control
-        [nzSpan]="false ? 10 : null"
-        nzErrorTip="Please input your username!"
-      >
-        <input nz-input placeholder="input placeholder" />
-      </nz-form-control>
-    </nz-form-item>
-    <nz-form-item>
-      <nz-form-label [nzSpan]="false ? 4 : null">Field B</nz-form-label>
-      <nz-form-control
-        [nzSpan]="false ? 10 : null"
-        nzErrorTip="Please input your Password!"
-      >
-        <input nz-input placeholder="input placeholder" />
-      </nz-form-control>
-    </nz-form-item>
-  </form>
+<div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
+  <div nz-col class="gutter-row" [nzSpan]="10"><div class="inner-box"
+    style="background-color:aqua">col-6</div></div>
+  <div nz-col class="gutter-row" [nzSpan]="14"><div class="inner-box"
+    style="background-color: blanchedalmond;">col-6</div></div>
+</div>
 
-  <!-- <nz-form-item>
-    <nz-form-label
-      [nzSm]="6"
-      [nzXs]="24"
-      nzFor="captcha"
-      nzRequired
-      nzTooltipTitle="Please click 'Get captcha'"
-      [nzTooltipIcon]="captchaTooltipIcon"
-    >
-      Captcha
-    </nz-form-label>
-    <nz-form-control
-      [nzSm]="14"
-      [nzXs]="24"
-      nzErrorTip="Please input the captcha you got!"
-      nzExtra="We must make sure that your are a human."
-    >
-      <div nz-row [nzGutter]="8">
-        <div nz-col [nzSpan]="12">
-          <input nz-input formControlName="captcha" id="captcha" />
-        </div>
-        <div nz-col [nzSpan]="12">
-          <button nz-button (click)="getCaptcha($event)">Get captcha</button>
-        </div>
-      </div>
-    </nz-form-control>
-  </nz-form-item> -->
-</form>
+
+<div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
+  <div nz-col class="gutter-row" [nzSpan]="8"><div class="inner-box">col-6</div></div>
+  <div nz-col class="gutter-row" [nzSpan]="8"><div class="inner-box">col-6</div></div>
+  <div nz-col class="gutter-row" [nzSpan]="8"><div class="inner-box">col-6</div></div>
+</div>
+
+
+<div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
+  <div nz-col class="gutter-row" [nzSpan]="6"><div class="inner-box">col-6</div></div>
+  <div nz-col class="gutter-row" [nzSpan]="6"><div class="inner-box">col-6</div></div>
+  <div nz-col class="gutter-row" [nzSpan]="6"><div class="inner-box">col-6</div></div>
+  <div nz-col class="gutter-row" [nzSpan]="6"><div class="inner-box">col-6</div></div>
+</div>
+
+
+<div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }" >
+  <div nz-col class="gutter-row" [nzSpan]="6"><div class="inner-box" style="background-color: blanchedalmond;">col-6</div></div>
+  <div nz-col class="gutter-row" [nzSpan]="6"><div class="inner-box"
+    style="background-color:aqua">col-6</div></div>
+</div>
+
+
+<nz-divider nzOrientation="left"></nz-divider>
+<span>Datos Laborales del Participe</span>
+<div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
+  <div nz-col class="gutter-row" [nzSpan]="9"><div class="inner-box"
+    style="background-color:aqua">col-6</div></div>
+  <div nz-col class="gutter-row" [nzSpan]="15"><div class="inner-box"
+    style="background-color: blanchedalmond;">col-6</div></div>
+</div>
+
+
+<div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
+  <div nz-col class="gutter-row" [nzSpan]="8"><div class="inner-box">col-6</div></div>
+  <div nz-col class="gutter-row" [nzSpan]="8"><div class="inner-box">col-6</div></div>
+  <div nz-col class="gutter-row" [nzSpan]="8"><div class="inner-box">col-6</div></div>
+</div>
+
+<nz-switch [(ngModel)]="switchValue"></nz-switch>
+
+
+<nz-divider nzOrientation="left"></nz-divider>
+<span>Datos del Domicilio (Todas las comunicaciones y/o notificaciones se enviarán a esta dirección).
+</span>
+
+
+<div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
+  <div nz-col class="gutter-row" [nzSpan]="6"><div class="inner-box">col-6</div></div>
+  <div nz-col class="gutter-row" [nzSpan]="6"><div class="inner-box">col-6</div></div>
+  <div nz-col class="gutter-row" [nzSpan]="6"><div class="inner-box">col-6</div></div>
+  <div nz-col class="gutter-row" [nzSpan]="6"><div class="inner-box">col-6</div></div>
+</div>
+
+<div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }" >
+  <div nz-col class="gutter-row" [nzSpan]="24"><div class="inner-box" style="background-color: blanchedalmond;">col-6</div></div>
+</div>
+
+<div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }" >
+  <div nz-col class="gutter-row" [nzSpan]="15"><div class="inner-box" style="background-color: blanchedalmond;">col-6</div></div>
+  <div nz-col class="gutter-row" [nzSpan]="9"><div class="inner-box">col-6</div></div>
+</div>
+
+<div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }" >
+  <div nz-col class="gutter-row" [nzSpan]="24"><div class="inner-box" style="background-color: blanchedalmond;">col-6</div></div>
+</div>
+
+<div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }" >
+  <div nz-col class="gutter-row" [nzSpan]="12"><div class="inner-box" style="background-color: rgb(208, 205, 255);">col-6</div></div>
+  <div nz-col class="gutter-row" [nzSpan]="12"><div class="inner-box">col-6</div></div>
+</div>
+
+
+<span>
+  * Domiciliado: (i) Se considera Persona Juridica Domiciliada cuando se constituye dentro del territorio Peruano, (Ji) Se considera Persona Juridica No Domiciliada cuando se constituye fuera del territorio Peruano. Ver art. P del D. S. NP 179-2004-EF.
+</span>

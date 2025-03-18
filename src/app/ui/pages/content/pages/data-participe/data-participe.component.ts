@@ -15,16 +15,19 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { FormsModule } from '@angular/forms';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
 
 
 @Component({
   selector: 'app-data-participe',
   standalone: true,
-  imports: [ReactiveFormsModule, NzButtonModule, NzCheckboxModule, NzFormModule,  NzInputModule, NzSelectModule, NzSelectModule, FormsModule, NzIconModule],
+  imports: [ReactiveFormsModule, NzButtonModule, NzCheckboxModule, NzFormModule,  NzInputModule, NzSelectModule, NzSelectModule, FormsModule, NzIconModule, NzDividerModule, NzSwitchModule],
   templateUrl: './data-participe.component.html',
   styleUrl: './data-participe.component.scss'
 })
 export class DataParticipeComponent  implements OnInit, OnDestroy {
+  switchValue = false;
   private fb = inject(NonNullableFormBuilder);
   private destroy$ = new Subject<void>();
   validateForm = this.fb.group({
