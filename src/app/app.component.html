@@ -47,6 +47,8 @@
               ></nz-step>
             </nz-steps>
           </div>
+
+          <!-- TODO VISTAS RUTAS -->
           <div nz-col nzSpan="16">
             <nz-space [nzSize]="4" nzDirection="vertical" class="w-100">
               <div *nzSpaceItem>
@@ -54,9 +56,9 @@
               </div>
               <div *nzSpaceItem>
                 @switch(index){ @case (0){
-                <app-data-inversion></app-data-inversion>
-                } @case (1){
-                  <app-data-participe></app-data-participe>
+                  <app-data-participe></app-data-participe>                } @case (1){
+                  <app-data-inversion></app-data-inversion>
+
                 } @case (2){ } @case (3){ } @case (4){ } @case (5){
                 } @case (6){ } }
               </div>

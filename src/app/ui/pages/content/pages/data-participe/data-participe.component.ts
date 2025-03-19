@@ -17,17 +17,26 @@ import { FormsModule } from '@angular/forms';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { NzSpaceModule } from 'ng-zorro-antd/space';
+import { NzCardModule } from 'ng-zorro-antd/card';
+
 
 
 @Component({
   selector: 'app-data-participe',
   standalone: true,
-  imports: [ReactiveFormsModule, NzButtonModule, NzCheckboxModule, NzFormModule,  NzInputModule, NzSelectModule, NzSelectModule, FormsModule, NzIconModule, NzDividerModule, NzSwitchModule],
+  imports: [ReactiveFormsModule, NzButtonModule, NzCheckboxModule, NzFormModule,  NzInputModule, NzSelectModule, NzSelectModule, FormsModule, NzIconModule, NzDividerModule, NzSwitchModule, NzSpaceModule, NzCardModule],
   templateUrl: './data-participe.component.html',
   styleUrl: './data-participe.component.scss'
 })
 export class DataParticipeComponent  implements OnInit, OnDestroy {
-  tipoPersona: string = 'NATURAL';
+  tipoPersona: number = 1;
+
+  elegirTipoPersona(tipo: number) {
+    this.tipoPersona = tipo;
+  }
+
+
   switchValue = false;
 
   private fb = inject(NonNullableFormBuilder);
