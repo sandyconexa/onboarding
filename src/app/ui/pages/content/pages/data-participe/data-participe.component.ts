@@ -27,7 +27,9 @@ import { NzSwitchModule } from 'ng-zorro-antd/switch';
   styleUrl: './data-participe.component.scss'
 })
 export class DataParticipeComponent  implements OnInit, OnDestroy {
+  tipoPersona: string = 'NATURAL';
   switchValue = false;
+
   private fb = inject(NonNullableFormBuilder);
   private destroy$ = new Subject<void>();
   validateForm = this.fb.group({

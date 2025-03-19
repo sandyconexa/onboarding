@@ -1,29 +1,49 @@
 <h2>Datos básicos del Partícipe</h2>
 <span>Datos del Partícipe</span>
 
-<!-- <form nz-form nzLayout="vertical">
-  <nz-form-item>
-    <nz-form-label [nzSm]="6" [nzXs]="6" >Field A</nz-form-label>
-    <nz-form-control
-    [nzSm]="6" [nzXs]="6"
-      nzErrorTip="Please input your username!"
+<nz-row [nzGutter]="16" class="grid-container">
+  <!-- Persona Natural -->
+  <nz-col [nzSpan]="12">
+    <div
+      class="radio-card"
+      [class.active]="tipoPersona === 'NATURAL'"
+      (click)="tipoPersona = 'NATURAL'"
     >
-      <input nz-input placeholder="input placeholder" />
-    </nz-form-control>
-  </nz-form-item>
-  <nz-form-item>
-    <nz-form-label [nzSm]="6" [nzXs]="6" >Field B</nz-form-label>
-    <nz-form-control
-    [nzSm]="6" [nzXs]="6"
-      nzErrorTip="Please input your Password!"
+      <div class="radio-content">
+        <div class="icon-box">
+          <i nz-icon nzType="user" nzTheme="outline"></i>
+        </div>
+        <div class="text-box">
+          <h4>Persona Natural</h4>
+          <p>Individuo con obligaciones tributarias</p>
+        </div>
+      </div>
+    </div>
+  </nz-col>
+
+  <!-- Persona Jurídica -->
+  <nz-col [nzSpan]="12">
+    <div
+      class="radio-card"
+      [class.active]="tipoPersona === 'JURIDICO'"
+      (click)="tipoPersona = 'JURIDICO'"
     >
-      <input nz-input placeholder="input placeholder" />
-    </nz-form-control>
-  </nz-form-item>
-</form> -->
+      <div class="radio-content">
+        <div class="icon-box">
+          <i nz-icon nzType="bank" nzTheme="outline"></i>
+        </div>
+        <div class="text-box">
+          <h4>Persona Jurídica</h4>
+          <p>Entidad empresarial con obligaciones fiscales</p>
+        </div>
+      </div>
+    </div>
+  </nz-col>
+</nz-row>
 
 
-<div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }" >
+
+<!-- <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }" >
   <div nz-col class="gutter-row" [nzSpan]="12"><div class="inner-box" style="background-color: blanchedalmond;">col-6
     <button nz-button nzType="default">Persona Natural</button>
   </div>
@@ -32,7 +52,7 @@
     <button nz-button nzType="default">Persona Jurídica</button>
   </div>
 </div>
-</div>
+</div> -->
 
 
 <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
