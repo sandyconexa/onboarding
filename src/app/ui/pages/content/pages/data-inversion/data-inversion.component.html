@@ -1,4 +1,11 @@
-<nz-space [nzSize]="12" nzDirection="vertical" class="w-100">
+<form
+  nz-form
+  [nzLayout]="'vertical'"
+  nz-space
+  [nzSize]="12"
+  nzDirection="vertical"
+  class="w-100"
+>
   <div *nzSpaceItem>
     <h2>Datos básicos de la Inversión</h2>
     <span>Datos Básicos para el contrato de Inversión:</span>
@@ -20,28 +27,32 @@
     <div nz-row [nzGutter]="24" *nzSpaceItem>
       <div nz-col [nzSpan]="12">
         <nz-card (click)="elegirTipoParticipe(1)">
-            <div nz-row [nzGutter]="16" nzAlign="middle">
-                <div nz-col>
-                    1
-                </div>
-                <div nz-col>
-                    <div nz-row>Partícipe Clase A</div>
-                    <div nz-row>Mayor rendimiento objetivo</div>
-                </div>
+          <div nz-row [nzGutter]="16" nzAlign="middle">
+            <div nz-col>
+              <div class="participe_logo">
+                <span>A</span>
+              </div>
             </div>
+            <div nz-col>
+              <div nz-row>Partícipe Clase A</div>
+              <div nz-row>Mayor rendimiento objetivo</div>
+            </div>
+          </div>
         </nz-card>
       </div>
       <div nz-col [nzSpan]="12">
         <nz-card (click)="elegirTipoParticipe(2)">
-            <div nz-row [nzGutter]="16" nzAlign="middle">
-                <div nz-col>
-                    1
-                </div>
-                <div nz-col>
-                    <div nz-row>Partícipe Clase B</div>
-                    <div nz-row>Rendimiento fijo garantizado</div>
-                </div>
+          <div nz-row [nzGutter]="16" nzAlign="middle">
+            <div nz-col>
+              <div class="participe_logo">
+                <span>B</span>
+              </div>
             </div>
+            <div nz-col>
+              <div nz-row>Partícipe Clase B</div>
+              <div nz-row>Rendimiento fijo garantizado</div>
+            </div>
+          </div>
         </nz-card>
       </div>
     </div>
@@ -55,49 +66,135 @@
     <div nz-row [nzGutter]="24" *nzSpaceItem>
       <div nz-col [nzSpan]="12">
         <nz-card (click)="elegirTipoMoneda(1)">
-            <div nz-row [nzGutter]="16" nzAlign="middle">
-                <div nz-col>
-                    1
-                </div>
-                <div nz-col>
-                    <div nz-row>PEN</div>
-                    <div nz-row>Contrato de Inversión PEN</div>
-                </div>
+          <div nz-row [nzGutter]="16" nzAlign="middle">
+            <div nz-col>1</div>
+            <div nz-col>
+              <div nz-row>PEN</div>
+              <div nz-row>Contrato de Inversión PEN</div>
             </div>
+          </div>
         </nz-card>
       </div>
       <div nz-col [nzSpan]="12">
         <nz-card (click)="elegirTipoMoneda(2)">
-            <div nz-row [nzGutter]="16" nzAlign="middle">
-                <div nz-col>
-                    1
-                </div>
-                <div nz-col>
-                    <div nz-row>USD</div>
-                    <div nz-row>Contrato de Inversión USD</div>
-                </div>
+          <div nz-row [nzGutter]="16" nzAlign="middle">
+            <div nz-col>1</div>
+            <div nz-col>
+              <div nz-row>USD</div>
+              <div nz-row>Contrato de Inversión USD</div>
             </div>
+          </div>
         </nz-card>
       </div>
     </div>
   </nz-space>
 
-  <form nz-form [nzLayout]="'vertical'" nz-row [nzGutter]="24" *nzSpaceItem>
+  <div nz-row [nzGutter]="24" *nzSpaceItem>
     <div nz-col [nzSpan]="12">
-        <nz-form-item>
-            <nz-form-label >Importe</nz-form-label>
-            <nz-form-control  nzErrorTip="Please input your username!">
-              <input nz-input formControlName="fieldA" placeholder="input placeholder" />
-            </nz-form-control>
-          </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>Importe</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your username!">
+          <input
+            nz-input
+            formControlName="fieldA"
+            placeholder="input placeholder"
+          />
+        </nz-form-control>
+      </nz-form-item>
     </div>
     <div nz-col [nzSpan]="12">
-        <nz-form-item>
-            <nz-form-label >Modalidad</nz-form-label>
-            <nz-form-control  nzErrorTip="Please input your username!">
-              <input nz-input formControlName="fieldB" placeholder="input placeholder" />
-            </nz-form-control>
-          </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>Modalidad</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your username!">
+          <input
+            nz-input
+            formControlName="fieldB"
+            placeholder="input placeholder"
+          />
+        </nz-form-control>
+      </nz-form-item>
     </div>
-  </form>
-</nz-space>
+    <div nz-col [nzSpan]="12">
+      <nz-form-item>
+        <nz-form-label>Plazo de inversión</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your username!">
+          <input
+            nz-input
+            formControlName="fieldC"
+            placeholder="input placeholder"
+          />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+    <div nz-col [nzSpan]="12">
+      <nz-form-item>
+        <nz-form-label>Frecuencia de Pagos</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your username!">
+          <input
+            nz-input
+            formControlName="fieldD"
+            placeholder="input placeholder"
+          />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+  </div>
+  <div class="w-100" nz-space nzDirection="vertical" [nzSize]="12" *nzSpaceItem>
+    <span *nzSpaceItem>Datos de Asesor Financiero:</span>
+    <span style="color: rgb(220, 38, 38)" *nzSpaceItem
+      >Nota: Solo se consideran asesores existentes en la base de datos sino no
+      se podrá registrar el prospecto.</span
+    >
+
+    <div nz-row [nzGutter]="16" *nzSpaceItem>
+      <div nz-col [nzSpan]="24">
+        <nz-form-item>
+          <nz-form-label>Nombres</nz-form-label>
+          <nz-form-control nzErrorTip="Please input your username!">
+            <input
+              nz-input
+              formControlName="fieldD"
+              placeholder="input placeholder"
+            />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <div nz-col [nzSpan]="24">
+        <nz-form-item>
+          <nz-form-label>Correo</nz-form-label>
+          <nz-form-control nzErrorTip="Please input your username!">
+            <input
+              nz-input
+              formControlName="fieldD"
+              placeholder="input placeholder"
+            />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <div nz-col [nzSpan]="4">
+        <nz-form-item>
+          <nz-form-label>Tipo de Documento</nz-form-label>
+          <nz-form-control nzErrorTip="Please input your username!">
+            <input
+              nz-input
+              formControlName="fieldD"
+              placeholder="input placeholder"
+            />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <div nz-col [nzSpan]="20">
+        <nz-form-item>
+          <nz-form-label>N° de Documento de Identidad</nz-form-label>
+          <nz-form-control nzErrorTip="Please input your username!">
+            <input
+              nz-input
+              formControlName="fieldD"
+              placeholder="input placeholder"
+            />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+    </div>
+  </div>
+</form>

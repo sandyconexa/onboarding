@@ -1,9 +1,19 @@
-<div class="container">
-  <nz-space class="content" [nzSize]="48" [nzDirection]="'vertical'">
+<div nz-space nzDirection="vertical" [nzSize]="56" class="w-100 container">
+  <nz-space
+    class="content"
+    [nzSize]="56"
+    [nzDirection]="'vertical'"
+    *nzSpaceItem
+  >
     <app-header *nzSpaceItem></app-header>
     <div class="px-20" *nzSpaceItem>
       <div class="content-main">
-        <div nz-row nzJustify="center" class="content-main-form">
+        <div
+          nz-row
+          [nzGutter]="48"
+          nzJustify="center"
+          class="content-main-form"
+        >
           <div nz-col nzSpan="8">
             <nz-steps
               [nzCurrent]="index"
@@ -48,15 +58,33 @@
             </nz-steps>
           </div>
           <div nz-col nzSpan="16">
-            <nz-space [nzSize]="4" nzDirection="vertical" class="w-100">
-              <div *nzSpaceItem>
-                <span>Paso {{ index + 1 }}/7</span>
-              </div>
-              <div *nzSpaceItem>
-                @switch(index){ @case (0){
-                <app-data-inversion></app-data-inversion>
-                } @case (1){ } @case (2){ } @case (3){ } @case (4){ } @case (5){
-                } @case (6){ } }
+            <nz-space [nzSize]="24" nzDirection="vertical" class="w-100">
+              <nz-space [nzSize]="4" nzDirection="vertical" class="w-100" *nzSpaceItem>
+                <div *nzSpaceItem>
+                  <span>Paso {{ index + 1 }}/7</span>
+                </div>
+                <div *nzSpaceItem>
+                  @switch(index){ @case (0){
+                  <app-data-inversion></app-data-inversion>
+                  } @case (1){ } @case (2){ } @case (3){ } @case (4){ } @case
+                  (5){ } @case (6){ } }
+                </div>
+              </nz-space>
+              <div nz-row [nzJustify]="index!=0?'space-between':'end'" *nzSpaceItem>
+                @if(index!=0){
+                    <div nz-col>
+                      <button nz-button nzSize="large" nzType="primary">
+                        <nz-icon nz-icon nzType="left" />
+                        <span>Anterior</span>
+                      </button>
+                    </div>
+                }
+                <div nz-col>
+                  <button nz-button nzSize="large" nzType="primary">
+                    <span>Siguiente</span>
+                    <nz-icon nz-icon nzType="right" />
+                  </button>
+                </div>
               </div>
             </nz-space>
           </div>
@@ -65,5 +93,5 @@
     </div>
   </nz-space>
 
-  <app-footer></app-footer>
+  <app-footer *nzSpaceItem></app-footer>
 </div>

@@ -6,6 +6,7 @@ import { NzStepsModule } from 'ng-zorro-antd/steps';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { DataInversionComponent } from './ui/pages/content/pages/data-inversion/data-inversion.component';
 import { NzSpaceModule } from 'ng-zorro-antd/space';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ import { NzSpaceModule } from 'ng-zorro-antd/space';
     NzGridModule,
     NzStepsModule,
     NzIconModule,
-    NzSpaceModule
+    NzSpaceModule,
+    NzButtonModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
