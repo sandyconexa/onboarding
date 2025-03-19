@@ -4,6 +4,7 @@
     <span>Datos Básicos para el contrato de Inversión:</span>
   </div>
 
+  <!-- TIPO DE PARTICIPE -->
   <nz-space [nzSize]="2" nzDirection="vertical" class="w-100" *nzSpaceItem>
     <div nz-space [nzSize]="8" *nzSpaceItem>
       <span *nzSpaceItem>Tipo de Particpe: </span>
@@ -18,7 +19,7 @@
 
     <div nz-row [nzGutter]="24" *nzSpaceItem>
       <div nz-col [nzSpan]="12">
-        <nz-card>
+        <nz-card (click)="elegirTipoParticipe(1)">
             <div nz-row [nzGutter]="16" nzAlign="middle">
                 <div nz-col>
                     1
@@ -31,7 +32,7 @@
         </nz-card>
       </div>
       <div nz-col [nzSpan]="12">
-        <nz-card>
+        <nz-card (click)="elegirTipoParticipe(2)">
             <div nz-row [nzGutter]="16" nzAlign="middle">
                 <div nz-col>
                     1
@@ -46,13 +47,14 @@
     </div>
   </nz-space>
 
+  <!-- MONEDA INVERSION -->
   <nz-space [nzSize]="2" nzDirection="vertical" class="w-100" *nzSpaceItem>
     <div *nzSpaceItem>
       <span>Moneda de la Inversión:</span>
     </div>
     <div nz-row [nzGutter]="24" *nzSpaceItem>
       <div nz-col [nzSpan]="12">
-        <nz-card>
+        <nz-card (click)="elegirTipoMoneda(1)">
             <div nz-row [nzGutter]="16" nzAlign="middle">
                 <div nz-col>
                     1
@@ -65,7 +67,7 @@
         </nz-card>
       </div>
       <div nz-col [nzSpan]="12">
-        <nz-card>
+        <nz-card (click)="elegirTipoMoneda(2)">
             <div nz-row [nzGutter]="16" nzAlign="middle">
                 <div nz-col>
                     1
@@ -79,4 +81,23 @@
       </div>
     </div>
   </nz-space>
+
+  <form nz-form [nzLayout]="'vertical'" nz-row [nzGutter]="24" *nzSpaceItem>
+    <div nz-col [nzSpan]="12">
+        <nz-form-item>
+            <nz-form-label >Importe</nz-form-label>
+            <nz-form-control  nzErrorTip="Please input your username!">
+              <input nz-input formControlName="fieldA" placeholder="input placeholder" />
+            </nz-form-control>
+          </nz-form-item>
+    </div>
+    <div nz-col [nzSpan]="12">
+        <nz-form-item>
+            <nz-form-label >Modalidad</nz-form-label>
+            <nz-form-control  nzErrorTip="Please input your username!">
+              <input nz-input formControlName="fieldB" placeholder="input placeholder" />
+            </nz-form-control>
+          </nz-form-item>
+    </div>
+  </form>
 </nz-space>
