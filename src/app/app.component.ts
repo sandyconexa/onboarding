@@ -6,6 +6,7 @@ import { NzStepsModule } from 'ng-zorro-antd/steps';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { DataInversionComponent } from './ui/pages/content/pages/data-inversion/data-inversion.component';
 import { NzSpaceModule } from 'ng-zorro-antd/space';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 import { DataParticipeComponent } from "./ui/pages/content/pages/data-participe/data-participe.component";
 
 @Component({
@@ -19,6 +20,7 @@ import { DataParticipeComponent } from "./ui/pages/content/pages/data-participe/
     NzStepsModule,
     NzIconModule,
     NzSpaceModule,
+    NzButtonModule,
     DataParticipeComponent
 ],
   templateUrl: './app.component.html',
