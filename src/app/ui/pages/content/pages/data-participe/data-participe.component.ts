@@ -20,12 +20,16 @@ import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { NzSpaceModule } from 'ng-zorro-antd/space';
 import { NzCardModule } from 'ng-zorro-antd/card';
 
+import { getISOWeek } from 'date-fns';
+import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+import { NzI18nService, es_ES } from 'ng-zorro-antd/i18n';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-data-participe',
   standalone: true,
-  imports: [ReactiveFormsModule, NzButtonModule, NzCheckboxModule, NzFormModule,  NzInputModule, NzSelectModule, NzSelectModule, FormsModule, NzIconModule, NzDividerModule, NzSwitchModule, NzSpaceModule, NzCardModule],
+  imports: [ReactiveFormsModule, NzButtonModule, NzCheckboxModule, NzFormModule,  NzInputModule, NzSelectModule, NzSelectModule, FormsModule, NzIconModule, NzDividerModule, NzSwitchModule, NzSpaceModule, NzCardModule, NzDatePickerModule, CommonModule],
   templateUrl: './data-participe.component.html',
   styleUrl: './data-participe.component.scss'
 })
@@ -35,6 +39,21 @@ export class DataParticipeComponent  implements OnInit, OnDestroy {
   elegirTipoPersona(tipo: number) {
     this.tipoPersona = tipo;
   }
+
+  date = null;
+  // isEnglish = false;
+
+
+
+  onChange(result: Date): void {
+    console.log('onChange: ', result);
+  }
+
+  getWeek(result: Date): void {
+    console.log('week: ', getISOWeek(result));
+  }
+
+
 
 
   switchValue = false;
