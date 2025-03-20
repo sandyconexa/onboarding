@@ -106,11 +106,10 @@
       <nz-form-item>
         <nz-form-label>Modalidad</nz-form-label>
         <nz-form-control nzErrorTip="Please input your username!">
-          <input
-            nz-input
-            formControlName="fieldB"
-            placeholder="input placeholder"
-          />
+          <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a person">
+            <nz-option nzLabel="Con Distrubición" [nzValue]="1"></nz-option>
+            <nz-option nzLabel="Con Reinversión" [nzValue]="2"></nz-option>
+          </nz-select>
         </nz-form-control>
       </nz-form-item>
     </div>
@@ -118,11 +117,11 @@
       <nz-form-item>
         <nz-form-label>Plazo de inversión</nz-form-label>
         <nz-form-control nzErrorTip="Please input your username!">
-          <input
-            nz-input
-            formControlName="fieldC"
-            placeholder="input placeholder"
-          />
+          <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a person">
+            <nz-option nzLabel="36 meses" [nzValue]="1"></nz-option>
+            <nz-option nzLabel="24 meses" [nzValue]="2"></nz-option>
+            <nz-option nzLabel="12 meses" [nzValue]="2"></nz-option>
+          </nz-select>
         </nz-form-control>
       </nz-form-item>
     </div>
@@ -130,11 +129,12 @@
       <nz-form-item>
         <nz-form-label>Frecuencia de Pagos</nz-form-label>
         <nz-form-control nzErrorTip="Please input your username!">
-          <input
-            nz-input
-            formControlName="fieldD"
-            placeholder="input placeholder"
-          />
+          <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a person">
+            <nz-option nzLabel="Anual" [nzValue]="1"></nz-option>
+            <nz-option nzLabel="Semestral" [nzValue]="2"></nz-option>
+            <nz-option nzLabel="Trimestral" [nzValue]="2"></nz-option>
+            <nz-option nzLabel="Al vencimiento" [nzValue]="2"></nz-option>
+          </nz-select>
         </nz-form-control>
       </nz-form-item>
     </div>
@@ -171,19 +171,19 @@
           </nz-form-control>
         </nz-form-item>
       </div>
-      <div nz-col [nzSpan]="4">
+      <div nz-col [nzSpan]="6">
         <nz-form-item>
           <nz-form-label>Tipo de Documento</nz-form-label>
           <nz-form-control nzErrorTip="Please input your username!">
-            <input
-              nz-input
-              formControlName="fieldD"
-              placeholder="input placeholder"
-            />
+            <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a person">
+              <nz-option nzLabel="DNI" [nzValue]="1"></nz-option>
+              <nz-option nzLabel="CARNET DE EXTRANJERIA" [nzValue]="2"></nz-option>
+              <nz-option nzLabel="PASAPORTE" [nzValue]="2"></nz-option>
+            </nz-select>
           </nz-form-control>
         </nz-form-item>
       </div>
-      <div nz-col [nzSpan]="20">
+      <div nz-col [nzSpan]="18">
         <nz-form-item>
           <nz-form-label>N° de Documento de Identidad</nz-form-label>
           <nz-form-control nzErrorTip="Please input your username!">
