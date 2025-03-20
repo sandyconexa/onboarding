@@ -7,10 +7,12 @@ import { NzSpaceModule } from 'ng-zorro-antd/space';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzFormLayoutType, NzFormModule } from 'ng-zorro-antd/form';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+
 @Component({
   selector: 'app-data-inversion',
   standalone: true,
-  imports: [CommonModule,NzSpaceModule,NzGridModule,NzIconModule, NzButtonModule,NzCardModule,NzInputModule,NzFormModule],
+  imports: [CommonModule,NzSpaceModule,NzGridModule,NzIconModule, NzButtonModule,NzCardModule,NzInputModule,NzFormModule,NzSelectModule],
   templateUrl: './data-inversion.component.html',
   styleUrl: './data-inversion.component.scss',
 })
