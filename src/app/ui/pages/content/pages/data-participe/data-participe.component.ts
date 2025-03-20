@@ -4,7 +4,7 @@ import {
   NonNullableFormBuilder,
   ReactiveFormsModule,
   ValidationErrors,
-  Validators
+  Validators,
 } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -19,42 +19,38 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { NzSpaceModule } from 'ng-zorro-antd/space';
 import { NzCardModule } from 'ng-zorro-antd/card';
-
-import { getISOWeek } from 'date-fns';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
-import { NzI18nService, es_ES } from 'ng-zorro-antd/i18n';
-import { CommonModule } from '@angular/common';
-
+import { NzRadioModule } from 'ng-zorro-antd/radio';
 
 @Component({
   selector: 'app-data-participe',
   standalone: true,
-  imports: [ReactiveFormsModule, NzButtonModule, NzCheckboxModule, NzFormModule,  NzInputModule, NzSelectModule, NzSelectModule, FormsModule, NzIconModule, NzDividerModule, NzSwitchModule, NzSpaceModule, NzCardModule, NzDatePickerModule, CommonModule],
+  imports: [
+    ReactiveFormsModule,
+    NzDatePickerModule,
+    NzButtonModule,
+    NzCheckboxModule,
+    NzFormModule,
+    NzInputModule,
+    NzSelectModule,
+    NzSelectModule,
+    FormsModule,
+    NzIconModule,
+    NzDividerModule,
+    NzSwitchModule,
+    NzSpaceModule,
+    NzCardModule,
+    NzRadioModule
+  ],
   templateUrl: './data-participe.component.html',
-  styleUrl: './data-participe.component.scss'
+  styleUrl: './data-participe.component.scss',
 })
-export class DataParticipeComponent  implements OnInit, OnDestroy {
+export class DataParticipeComponent implements OnInit, OnDestroy {
   tipoPersona: number = 1;
-
+  date = null;
   elegirTipoPersona(tipo: number) {
     this.tipoPersona = tipo;
   }
-
-  date = null;
-  // isEnglish = false;
-
-
-
-  onChange(result: Date): void {
-    console.log('onChange: ', result);
-  }
-
-  getWeek(result: Date): void {
-    console.log('week: ', getISOWeek(result));
-  }
-
-
-
 
   switchValue = false;
 
@@ -63,23 +59,28 @@ export class DataParticipeComponent  implements OnInit, OnDestroy {
   validateForm = this.fb.group({
     email: this.fb.control('', [Validators.email, Validators.required]),
     password: this.fb.control('', [Validators.required]),
-    checkPassword: this.fb.control('', [Validators.required, this.confirmationValidator]),
+    checkPassword: this.fb.control('', [
+      Validators.required,
+      this.confirmationValidator,
+    ]),
     nickname: this.fb.control('', [Validators.required]),
     phoneNumberPrefix: this.fb.control<'+86' | '+87'>('+86'),
     phoneNumber: this.fb.control('', [Validators.required]),
     website: this.fb.control('', [Validators.required]),
     captcha: this.fb.control('', [Validators.required]),
-    agree: this.fb.control(false)
+    agree: this.fb.control(false),
   });
   captchaTooltipIcon: NzFormTooltipIcon = {
     type: 'info-circle',
-    theme: 'twotone'
+    theme: 'twotone',
   };
 
   ngOnInit(): void {
-    this.validateForm.controls.password.valueChanges.pipe(takeUntil(this.destroy$)).subscribe(() => {
-      this.validateForm.controls.checkPassword.updateValueAndValidity();
-    });
+    this.validateForm.controls.password.valueChanges
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(() => {
+        this.validateForm.controls.checkPassword.updateValueAndValidity();
+      });
   }
 
   ngOnDestroy(): void {
@@ -91,7 +92,7 @@ export class DataParticipeComponent  implements OnInit, OnDestroy {
     if (this.validateForm.valid) {
       console.log('submit', this.validateForm.value);
     } else {
-      Object.values(this.validateForm.controls).forEach(control => {
+      Object.values(this.validateForm.controls).forEach((control) => {
         if (control.invalid) {
           control.markAsDirty();
           control.updateValueAndValidity({ onlySelf: true });

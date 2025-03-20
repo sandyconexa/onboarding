@@ -11,9 +11,9 @@
     <span>Datos del Partícipe</span>
   </div>
 
-  <!-- // TODO- PERSONA NATURAL -->
-  <nz-space [nzSize]="2" nzDirection="vertical" class="w-100" *nzSpaceItem>
-    <nz-row [nzGutter]="16">
+  <!-- TIPO PERSONA -->
+  <nz-space ngIf="tipoPersona === 1" [nzSize]="2" nzDirection="vertical" class="w-100" *nzSpaceItem>
+    <nz-row [nzGutter]="8">
       <nz-col [nzSpan]="12">
         <nz-card
           class="card-option"
@@ -53,333 +53,428 @@
   </nz-space>
 
   <!-- DATOS PERSONA NATURAL -->
-  <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }" *nzSpaceItem>
-    <div nz-col [nzSpan]="8">
-      <nz-form-item>
-        <nz-form-label>Tipo Documento </nz-form-label>
-        <nz-form-control nzErrorTip="Please input your username!">
-          <input nz-input placeholder="input placeholder" />
-        </nz-form-control>
-      </nz-form-item>
-    </div>
-    <div nz-col [nzSpan]="16">
+
+    <nz-space [nzSize]="12" nzDirection="vertical" class="w-100" *nzSpaceItem>
+      <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }" *nzSpaceItem>
+        <div nz-col [nzSpan]="8">
+          <nz-form-item>
+            <nz-form-label>Tipo Documento </nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <nz-select>
+                <nz-option nzValue="dni" nzLabel="DNI"></nz-option>
+                <nz-option
+                  nzValue="carnet"
+                  nzLabel="CARNET EXTRANJERIA"
+                ></nz-option>
+                <nz-option
+                  nzValue="pasaporte"
+                  nzLabel="PASAPORTE"
+                  nzDisabled
+                ></nz-option>
+              </nz-select>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+
+        <div nz-col [nzSpan]="16">
+          <nz-form-item>
+            <nz-form-label>Número Documento</nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <input nz-input placeholder="input placeholder" />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+
+        <div nz-col [nzSpan]="8">
+          <nz-form-item>
+            <nz-form-label>Nombres </nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <input nz-input placeholder="input placeholder" />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="8">
+          <nz-form-item>
+            <nz-form-label>Apellido Paterno</nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <input nz-input placeholder="input placeholder" />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="8">
+          <nz-form-item>
+            <nz-form-label>Apellido Materno</nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <input nz-input placeholder="input placeholder" />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+
+        <div nz-col [nzSpan]="6">
+          <nz-form-item>
+            <nz-form-label>Fecha Nacimiento </nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <nz-date-picker></nz-date-picker>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="6">
+          <nz-form-item>
+            <nz-form-label>Lugar Nacimiento</nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <input nz-input placeholder="input placeholder" />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="6">
+          <nz-form-item>
+            <nz-form-label>Estado civil</nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <nz-select>
+                <nz-option nzValue="soltero" nzLabel="Soltero"></nz-option>
+                <nz-option nzValue="casado" nzLabel="Casado"></nz-option>
+                <nz-option nzValue="viudo" nzLabel="Viudo"></nz-option>
+                <nz-option nzValue="divorciado" nzLabel="Divorciado"></nz-option>
+              </nz-select>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="6">
+          <nz-form-item>
+            <nz-form-label>Nacionalidad</nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <input nz-input placeholder="input placeholder" />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="12">
+          <nz-form-item>
+            <nz-form-label>Género</nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <nz-radio-group>
+                <label nz-radio>Masculino</label>
+                <label nz-radio>Femenino</label>
+              </nz-radio-group>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+      </div>
+    </nz-space>
+
+    <!-- DATOS DEL CONYUGE -->
+    <nz-divider nzOrientation="left" *nzSpaceItem></nz-divider>
+    <nz-space [nzSize]="12" nzDirection="vertical" class="w-100" *nzSpaceItem>
+      <span *nzSpaceItem>Datos del Cónyuge</span>
+      <div nz-row [nzGutter]="16" *nzSpaceItem>
+        <div nz-col [nzSpan]="8">
+          <nz-form-item>
+            <nz-form-label>Tipo Documento Cónyuge</nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <nz-select>
+                <nz-option nzValue="carnet" nzLabel="CE"></nz-option>
+                <nz-option nzValue="dni" nzLabel="DNI"></nz-option>
+                <nz-option nzValue="pss" nzLabel="PSS"></nz-option>
+                <nz-option nzValue="cdi" nzLabel="CDI"></nz-option>
+              </nz-select>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="16">
+          <nz-form-item>
+            <nz-form-label>Número Documento Cónyuge</nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <input nz-input placeholder="input placeholder" />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+      </div>
+      <div nz-row [nzGutter]="16" *nzSpaceItem>
+        <div nz-col [nzSpan]="8">
+          <nz-form-item>
+            <nz-form-label>Nombres </nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <input nz-input placeholder="input placeholder" />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="8">
+          <nz-form-item>
+            <nz-form-label>Apellido Paterno</nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <input nz-input placeholder="input placeholder" />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="8">
+          <nz-form-item>
+            <nz-form-label>Apellido Materno</nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <input nz-input placeholder="input placeholder" />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+
+        <div nz-col [nzSpan]="12">
+          <nz-form-item>
+            <nz-form-label>Regimen Patrimonial</nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <nz-select>
+                <nz-option
+                  nzValue="gananciales"
+                  nzLabel="Sociedad Gananciales"
+                ></nz-option>
+                <nz-option
+                  nzValue="patrimonio"
+                  nzLabel="Separación de Patrimonios"
+                ></nz-option>
+              </nz-select>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="12">
+          <nz-form-item>
+            <nz-form-label>Número Partida</nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <input nz-input placeholder="input placeholder" />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+      </div>
+    </nz-space>
+
+    <!-- DATOS LABORALES -->
+    <nz-divider nzOrientation="left" *nzSpaceItem></nz-divider>
+    <nz-space [nzSize]="12" nzDirection="vertical" class="w-100" *nzSpaceItem>
+      <span *nzSpaceItem>Datos Laborales del Participe:</span>
+      <div nz-row [nzGutter]="16" *nzSpaceItem>
+        <div nz-col [nzSpan]="8">
+          <nz-form-item>
+            <nz-form-label>Situación laboral</nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <input nz-input placeholder="input placeholder" />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="16">
+          <nz-form-item>
+            <nz-form-label>Profesión u Ocupación</nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <input nz-input placeholder="input placeholder" />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+      </div>
+      <div nz-row [nzGutter]="16" *nzSpaceItem>
+        <div nz-col [nzSpan]="8">
+          <nz-form-item>
+            <nz-form-label>Situación laboral</nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <nz-select>
+                <nz-option
+                  nzValue="independiente"
+                  nzLabel="Trabajador Independiente"
+                ></nz-option>
+                <nz-option
+                  nzValue="dependiente"
+                  nzLabel="Trabajador Dependiente"
+                ></nz-option>
+                <nz-option nzValue="otros" nzLabel="Otros"></nz-option>
+              </nz-select>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="16">
+          <nz-form-item>
+            <nz-form-label>Profesión u Ocupación</nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <input nz-input placeholder="input placeholder" />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+      </div>
+      <div nz-row [nzGutter]="10" *nzSpaceItem>
+        <div nz-col [nzSpan]="8">
+          <nz-form-item>
+            <nz-form-label>Centro de Labores:</nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <input nz-input placeholder="input placeholder" />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="8">
+          <nz-form-item>
+            <nz-form-label>Cargo</nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <input nz-input placeholder="input placeholder" />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="8">
+          <nz-form-item>
+            <nz-form-label>Antiguedad años</nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <input nz-input placeholder="input placeholder" />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+      </div>
+    </nz-space>
+
+    <!-- DATOS DOMICILIO -->
+    <nz-divider nzOrientation="left" *nzSpaceItem></nz-divider>
+    <nz-space [nzSize]="12" nzDirection="vertical" class="w-100" *nzSpaceItem>
+      <nz-switch></nz-switch>
+
+      <span *nzSpaceItem
+        >Datos del Domicilio (Todas las comunicaciones y/o notificaciones se
+        enviarán a esta dirección).
+      </span>
+
+      <div nz-row [nzGutter]="6" *nzSpaceItem>
+        <div nz-col [nzSpan]="6">
+          <nz-form-item>
+            <nz-form-label>Pais</nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <nz-select>
+                <nz-option nzValue="carnet" nzLabel="CE"></nz-option>
+              </nz-select>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="6">
+          <nz-form-item>
+            <nz-form-label>Departamento</nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <nz-select>
+                <nz-option nzValue="carnet" nzLabel="CE"></nz-option>
+              </nz-select>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="6">
+          <nz-form-item>
+            <nz-form-label>Provincia</nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <nz-select>
+                <nz-option nzValue="carnet" nzLabel="CE"></nz-option>
+              </nz-select>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="6">
+          <nz-form-item>
+            <nz-form-label>Distrito</nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <nz-select>
+                <nz-option nzValue="carnet" nzLabel="CE"></nz-option>
+              </nz-select>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="24">
+          <nz-form-item>
+            <nz-form-label>Domicilio</nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <input nz-input placeholder="input placeholder" />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="14">
+          <nz-form-item>
+            <nz-form-label>Referencia</nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <input nz-input placeholder="input placeholder" />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="10">
+          <nz-form-item>
+            <nz-form-label>Cod Postal</nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <input nz-input placeholder="input placeholder" />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="24">
+          <nz-form-item>
+            <nz-form-label>Email</nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <input nz-input placeholder="input placeholder" />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="12">
+          <nz-form-item>
+            <nz-form-label>Celular</nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <input nz-input placeholder="input placeholder" />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="12">
+          <nz-form-item>
+            <nz-form-label>Telefono</nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <input nz-input placeholder="input placeholder" />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+      </div>
+    </nz-space>
 
 
-      <nz-form-item>
-        <nz-form-label>Número Documento</nz-form-label>
-        <nz-form-control nzErrorTip="Please input your username!">
-          <input nz-input placeholder="input placeholder" />
-        </nz-form-control>
-      </nz-form-item>
-    </div>
 
-    <div nz-col [nzSpan]="8">
-      <nz-form-item>
-        <nz-form-label>Nombres </nz-form-label>
-        <nz-form-control nzErrorTip="Please input your username!">
-          <input nz-input placeholder="input placeholder" />
-        </nz-form-control>
-      </nz-form-item>
-    </div>
-    <div nz-col [nzSpan]="8">
-      <nz-form-item>
-        <nz-form-label>Apellido Paterno</nz-form-label>
-        <nz-form-control nzErrorTip="Please input your username!">
-          <input nz-input placeholder="input placeholder" />
-        </nz-form-control>
-      </nz-form-item>
-    </div>
-    <div nz-col [nzSpan]="8">
-      <nz-form-item>
-        <nz-form-label>Apellido Materno</nz-form-label>
-        <nz-form-control nzErrorTip="Please input your username!">
-          <input nz-input placeholder="input placeholder" />
-        </nz-form-control>
-      </nz-form-item>
-    </div>
+     <!-- DATOS PERSONA JURIDICA -->
 
-
-    <div nz-col [nzSpan]="6">
-      <nz-date-picker  ></nz-date-picker>
-      <!-- <nz-form-item>
-        <nz-form-label>Fecha Nacimiento </nz-form-label>
-        <nz-form-control nzErrorTip="Please input your username!">
-
-
-        </nz-form-control>
-      </nz-form-item> -->
-    </div>
-    <div nz-col [nzSpan]="6">
-      <nz-form-item>
-        <nz-form-label>Lugar Nacimiento</nz-form-label>
-        <nz-form-control nzErrorTip="Please input your username!">
-          <input nz-input placeholder="input placeholder" />
-        </nz-form-control>
-      </nz-form-item>
-    </div>
-    <div nz-col [nzSpan]="6">
-      <nz-form-item>
-        <nz-form-label>Estado civil</nz-form-label>
-        <nz-form-control nzErrorTip="Please input your username!">
-          <input nz-input placeholder="input placeholder" />
-        </nz-form-control>
-      </nz-form-item>
-    </div>
-    <div nz-col [nzSpan]="6">
-      <nz-form-item>
-        <nz-form-label>Nacionalidad</nz-form-label>
-        <nz-form-control nzErrorTip="Please input your username!">
-          <input nz-input placeholder="input placeholder" />
-        </nz-form-control>
-      </nz-form-item>
-    </div>
-    <div nz-col [nzSpan]="6">
-      <nz-form-item>
-        <nz-form-label>Género</nz-form-label>
-        <nz-form-control nzErrorTip="Please input your username!">
-          <input nz-input placeholder="input placeholder" />
-        </nz-form-control>
-      </nz-form-item>
-    </div>
-  </div>
-
-  <!-- DATOS DEL CONYUGE -->
-  <nz-divider nzOrientation="left" *nzSpaceItem></nz-divider>
-
-  <nz-space [nzSize]="12" nzDirection="vertical" class="w-100" *nzSpaceItem>
-    <span *nzSpaceItem>Datos del Cónyuge</span>
-    <div nz-row [nzGutter]="16" *nzSpaceItem>
-      <div nz-col [nzSpan]="8">
-        <nz-form-item>
-          <nz-form-label>Tipo Documento Cónyuge</nz-form-label>
-          <nz-form-control nzErrorTip="Please input your username!">
-            <input nz-input placeholder="input placeholder" />
-          </nz-form-control>
-        </nz-form-item>
-      </div>
-      <div nz-col [nzSpan]="16">
-        <nz-form-item>
-          <nz-form-label>Número Documento Cónyuge</nz-form-label>
-          <nz-form-control nzErrorTip="Please input your username!">
-            <input nz-input placeholder="input placeholder" />
-          </nz-form-control>
-        </nz-form-item>
-      </div>
-    </div>
-    <div nz-row [nzGutter]="16" *nzSpaceItem>
-      <div nz-col [nzSpan]="8">
-        <nz-form-item>
-          <nz-form-label>Nombres </nz-form-label>
-          <nz-form-control nzErrorTip="Please input your username!">
-            <input nz-input placeholder="input placeholder" />
-          </nz-form-control>
-        </nz-form-item>
-      </div>
-      <div nz-col [nzSpan]="8">
-        <nz-form-item>
-          <nz-form-label>Apellido Paterno</nz-form-label>
-          <nz-form-control nzErrorTip="Please input your username!">
-            <input nz-input placeholder="input placeholder" />
-          </nz-form-control>
-        </nz-form-item>
-      </div>
-      <div nz-col [nzSpan]="8">
-        <nz-form-item>
-          <nz-form-label>Apellido Materno</nz-form-label>
-          <nz-form-control nzErrorTip="Please input your username!">
-            <input nz-input placeholder="input placeholder" />
-          </nz-form-control>
-        </nz-form-item>
-      </div>
-
-      <div nz-col [nzSpan]="12">
-        <nz-form-item>
-          <nz-form-label>Regimen Patrimonial</nz-form-label>
-          <nz-form-control nzErrorTip="Please input your username!">
-            <input nz-input placeholder="input placeholder" />
-          </nz-form-control>
-        </nz-form-item>
-      </div>
-      <div nz-col [nzSpan]="12">
-        <nz-form-item>
-          <nz-form-label>Número Partida</nz-form-label>
-          <nz-form-control nzErrorTip="Please input your username!">
-            <input nz-input placeholder="input placeholder" />
-          </nz-form-control>
-        </nz-form-item>
-      </div>
-    </div>
-  </nz-space>
-
-  <!-- DATOS LABORALES -->
-  <nz-divider nzOrientation="left" *nzSpaceItem></nz-divider>
-
-  <nz-space [nzSize]="12" nzDirection="vertical" class="w-100" *nzSpaceItem>
-    <span *nzSpaceItem>Datos Laborales del Participe:</span>
-    <div nz-row [nzGutter]="16" *nzSpaceItem>
-      <div nz-col [nzSpan]="8">
-        <nz-form-item>
-          <nz-form-label>Situación laboral</nz-form-label>
-          <nz-form-control nzErrorTip="Please input your username!">
-            <input nz-input placeholder="input placeholder" />
-          </nz-form-control>
-        </nz-form-item>
-      </div>
-      <div nz-col [nzSpan]="16">
-        <nz-form-item>
-          <nz-form-label>Profesión u Ocupación</nz-form-label>
-          <nz-form-control nzErrorTip="Please input your username!">
-            <input nz-input placeholder="input placeholder" />
-          </nz-form-control>
-        </nz-form-item>
-      </div>
-    </div>
-    <div nz-row [nzGutter]="16" *nzSpaceItem>
-      <div nz-col [nzSpan]="8">
-        <nz-form-item>
-          <nz-form-label>Situación laboral</nz-form-label>
-          <nz-form-control nzErrorTip="Please input your username!">
-            <input nz-input placeholder="input placeholder" />
-          </nz-form-control>
-        </nz-form-item>
-      </div>
-      <div nz-col [nzSpan]="16">
-        <nz-form-item>
-          <nz-form-label>Profesión u Ocupación</nz-form-label>
-          <nz-form-control nzErrorTip="Please input your username!">
-            <input nz-input placeholder="input placeholder" />
-          </nz-form-control>
-        </nz-form-item>
-      </div>
-    </div>
-    <div nz-row [nzGutter]="10" *nzSpaceItem>
-      <div nz-col [nzSpan]="8">
-        <nz-form-item>
-          <nz-form-label>Centro de Labores:</nz-form-label>
-          <nz-form-control nzErrorTip="Please input your username!">
-            <input nz-input placeholder="input placeholder" />
-          </nz-form-control>
-        </nz-form-item>
-      </div>
-      <div nz-col [nzSpan]="8">
-        <nz-form-item>
-          <nz-form-label>Cargo</nz-form-label>
-          <nz-form-control nzErrorTip="Please input your username!">
-            <input nz-input placeholder="input placeholder" />
-          </nz-form-control>
-        </nz-form-item>
-      </div>
-      <div nz-col [nzSpan]="8">
-        <nz-form-item>
-          <nz-form-label>Antiguedad años</nz-form-label>
-          <nz-form-control nzErrorTip="Please input your username!">
-            <input nz-input placeholder="input placeholder" />
-          </nz-form-control>
-        </nz-form-item>
-      </div>
-    </div>
-  </nz-space>
-
-  <!-- DATOS DOMICILIO -->
-
-  <nz-divider nzOrientation="left" *nzSpaceItem></nz-divider>
-
-  <nz-space [nzSize]="12" nzDirection="vertical" class="w-100" *nzSpaceItem>
-    <nz-switch [(ngModel)]="switchValue"></nz-switch>
-
-    <span *nzSpaceItem
-      >Datos del Domicilio (Todas las comunicaciones y/o notificaciones se
-      enviarán a esta dirección).</span
-    >
-
-    <div nz-row [nzGutter]="6" *nzSpaceItem>
-      <div nz-col [nzSpan]="6">
-        <nz-form-item>
-          <nz-form-label>Pais</nz-form-label>
-          <nz-form-control nzErrorTip="Please input your username!">
-            <input nz-input placeholder="input placeholder" />
-          </nz-form-control>
-        </nz-form-item>
-      </div>
-      <div nz-col [nzSpan]="6">
-        <nz-form-item>
-          <nz-form-label>Departamento</nz-form-label>
-          <nz-form-control nzErrorTip="Please input your username!">
-            <input nz-input placeholder="input placeholder" />
-          </nz-form-control>
-        </nz-form-item>
-      </div>
-      <div nz-col [nzSpan]="6">
-        <nz-form-item>
-          <nz-form-label>Provincia</nz-form-label>
-          <nz-form-control nzErrorTip="Please input your username!">
-            <input nz-input placeholder="input placeholder" />
-          </nz-form-control>
-        </nz-form-item>
-      </div>
-      <div nz-col [nzSpan]="6">
-        <nz-form-item>
-          <nz-form-label>Distrito</nz-form-label>
-          <nz-form-control nzErrorTip="Please input your username!">
-            <input nz-input placeholder="input placeholder" />
-          </nz-form-control>
-        </nz-form-item>
-      </div>
-    </div>
-
-    <div nz-row *nzSpaceItem>
+  <nz-space ngIf="tipoPersona === 2" [nzSize]="12" nzDirection="vertical" class="w-100" *nzSpaceItem>
+    <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }" *nzSpaceItem>
       <div nz-col [nzSpan]="24">
         <nz-form-item>
-          <nz-form-label>Domicilio</nz-form-label>
+          <nz-form-label>Razón Social </nz-form-label>
           <nz-form-control nzErrorTip="Please input your username!">
             <input nz-input placeholder="input placeholder" />
           </nz-form-control>
         </nz-form-item>
       </div>
-    </div>
-
-    <div nz-row [nzGutter]="6" *nzSpaceItem>
-      <div nz-col [nzSpan]="14">
-        <nz-form-item>
-          <nz-form-label>Referencia</nz-form-label>
-          <nz-form-control nzErrorTip="Please input your username!">
-            <input nz-input placeholder="input placeholder" />
-          </nz-form-control>
-        </nz-form-item>
-      </div>
-      <div nz-col [nzSpan]="10">
-        <nz-form-item>
-          <nz-form-label>Cod Postal</nz-form-label>
-          <nz-form-control nzErrorTip="Please input your username!">
-            <input nz-input placeholder="input placeholder" />
-          </nz-form-control>
-        </nz-form-item>
-      </div>
-    </div>
-
-    <div nz-row *nzSpaceItem>
       <div nz-col [nzSpan]="24">
         <nz-form-item>
-          <nz-form-label>Email</nz-form-label>
+          <nz-form-label>Objeto Social </nz-form-label>
           <nz-form-control nzErrorTip="Please input your username!">
             <input nz-input placeholder="input placeholder" />
           </nz-form-control>
         </nz-form-item>
       </div>
-    </div>
 
-    <div nz-row [nzGutter]="6" *nzSpaceItem>
       <div nz-col [nzSpan]="12">
         <nz-form-item>
-          <nz-form-label>Celular</nz-form-label>
+          <nz-form-label>Fecha Inicio Operaciones </nz-form-label>
           <nz-form-control nzErrorTip="Please input your username!">
             <input nz-input placeholder="input placeholder" />
           </nz-form-control>
         </nz-form-item>
       </div>
+
       <div nz-col [nzSpan]="12">
         <nz-form-item>
-          <nz-form-label>Telefono</nz-form-label>
+          <nz-form-label>Lugar de Registro </nz-form-label>
+          <nz-form-control nzErrorTip="Please input your username!">
+            <input nz-input placeholder="input placeholder" />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+
+      <div nz-col [nzSpan]="15">
+        <nz-form-item>
+          <nz-form-label>Estado SUNAT </nz-form-label>
+          <nz-form-control nzErrorTip="Please input your username!">
+            <input nz-input placeholder="input placeholder" />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+
+      <div nz-col [nzSpan]="9">
+        <nz-form-item>
+          <nz-form-label>País </nz-form-label>
           <nz-form-control nzErrorTip="Please input your username!">
             <input nz-input placeholder="input placeholder" />
           </nz-form-control>
@@ -387,14 +482,14 @@
       </div>
     </div>
   </nz-space>
+
 
 
 </form>
 
-
 <span
->* Domiciliado: (i) Se considera Persona Juridica Domiciliada cuando se
-constituye dentro del territorio Peruano, (Ji) Se considera Persona Juridica
-No Domiciliada cuando se constituye fuera del territorio Peruano. Ver art. P
-del D. S. NP 179-2004-EF.</span
->
+  >* Domiciliado: (i) Se considera Persona Juridica Domiciliada cuando se
+  constituye dentro del territorio Peruano, (Ji) Se considera Persona Juridica
+  No Domiciliada cuando se constituye fuera del territorio Peruano. Ver art. P
+  del D. S. NP 179-2004-EF.
+</span>

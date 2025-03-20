@@ -7,7 +7,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { DataInversionComponent } from './ui/pages/content/pages/data-inversion/data-inversion.component';
 import { NzSpaceModule } from 'ng-zorro-antd/space';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { DataParticipeComponent } from "./ui/pages/content/pages/data-participe/data-participe.component";
+import { DataParticipeComponent } from './ui/pages/content/pages/data-participe/data-participe.component';
 
 @Component({
   selector: 'app-root',
@@ -21,8 +21,8 @@ import { DataParticipeComponent } from "./ui/pages/content/pages/data-participe/
     NzIconModule,
     NzSpaceModule,
     NzButtonModule,
-    DataParticipeComponent
-],
+    DataParticipeComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -33,5 +33,12 @@ export class AppComponent {
   cambiar(e: any) {
     console.log(e);
     this.index = e;
+  }
+
+  retroceder() {
+    this.index -= 1;
+  }
+  avanzar() {
+    this.index += 1;
   }
 }
