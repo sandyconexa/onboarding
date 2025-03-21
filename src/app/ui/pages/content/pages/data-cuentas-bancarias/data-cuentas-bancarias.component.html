@@ -1,0 +1,64 @@
+<form
+  nz-form
+  [nzLayout]="'vertical'"
+  nz-space
+  [nzSize]="12"
+  nzDirection="vertical"
+  class="w-100"
+>
+  <div *nzSpaceItem>
+    <h2>Datos de Cuentas Bancarias</h2>
+    <span>Datos de cuentas bancarias. </span>
+  </div>
+
+  <!-- TIPO DE CUENTA -->
+  <div nz-row [nzGutter]="24" *nzSpaceItem>
+
+    <div nz-col [nzSpan]="12">
+      <nz-form-item>
+        <nz-form-label>Tipo de Cuenta</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your username!">
+          <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a person">
+            <nz-option nzLabel="36 meses" [nzValue]="1"></nz-option>
+            <nz-option nzLabel="24 meses" [nzValue]="2"></nz-option>
+            <nz-option nzLabel="12 meses" [nzValue]="2"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+
+    <div nz-col [nzSpan]="12">
+      <nz-form-item>
+        <nz-form-label>Banco</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your username!">
+          <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a person">
+            <nz-option nzLabel="Con Distrubición" [nzValue]="1"></nz-option>
+            <nz-option nzLabel="Con Reinversión" [nzValue]="2"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+
+    <div nz-col [nzSpan]="12">
+      <nz-form-item>
+        <nz-form-label>Cuenta Bancaria N°:</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your username!">
+          <input nz-input placeholder="input placeholder" />
+
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+
+    <div nz-col [nzSpan]="12">
+      <nz-form-item>
+        <nz-form-label>Cuenta Interbancaria N°:</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your username!">
+          <input nz-input placeholder="input placeholder" />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+
+
+  </div>
+
+</form>

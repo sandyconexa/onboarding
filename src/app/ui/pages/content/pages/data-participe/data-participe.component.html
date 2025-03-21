@@ -54,9 +54,8 @@
 
   <!-- DATOS PERSONA NATURAL -->
 
-    <nz-space [nzSize]="12" nzDirection="vertical" class="w-100" *nzSpaceItem>
-      <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }" *nzSpaceItem>
-        <div nz-col [nzSpan]="8">
+      <div nz-row [nzGutter]="24" *nzSpaceItem>
+        <div nz-col [nzSpan]="12">
           <nz-form-item>
             <nz-form-label>Tipo Documento </nz-form-label>
             <nz-form-control nzErrorTip="Please input your username!">
@@ -69,36 +68,33 @@
                 <nz-option
                   nzValue="pasaporte"
                   nzLabel="PASAPORTE"
-                  nzDisabled
                 ></nz-option>
               </nz-select>
             </nz-form-control>
           </nz-form-item>
         </div>
 
-        <div nz-col [nzSpan]="16">
+        <div nz-col [nzSpan]="12">
           <nz-form-item>
             <nz-form-label>Número Documento</nz-form-label>
             <nz-form-control nzErrorTip="Please input your username!">
-              <input nz-input placeholder="input placeholder" />
-            </nz-form-control>
+              <input nz-input placeholder="input placeholder" />            </nz-form-control>
           </nz-form-item>
         </div>
+
 
         <div nz-col [nzSpan]="8">
           <nz-form-item>
             <nz-form-label>Nombres </nz-form-label>
             <nz-form-control nzErrorTip="Please input your username!">
-              <input nz-input placeholder="input placeholder" />
-            </nz-form-control>
+              <input nz-input placeholder="input placeholder" />            </nz-form-control>
           </nz-form-item>
         </div>
         <div nz-col [nzSpan]="8">
           <nz-form-item>
             <nz-form-label>Apellido Paterno</nz-form-label>
             <nz-form-control nzErrorTip="Please input your username!">
-              <input nz-input placeholder="input placeholder" />
-            </nz-form-control>
+              <input nz-input placeholder="input placeholder" />            </nz-form-control>
           </nz-form-item>
         </div>
         <div nz-col [nzSpan]="8">
@@ -109,6 +105,7 @@
             </nz-form-control>
           </nz-form-item>
         </div>
+
 
         <div nz-col [nzSpan]="6">
           <nz-form-item>
@@ -159,7 +156,6 @@
           </nz-form-item>
         </div>
       </div>
-    </nz-space>
 
     <!-- DATOS DEL CONYUGE -->
     <nz-divider nzOrientation="left" *nzSpaceItem></nz-divider>

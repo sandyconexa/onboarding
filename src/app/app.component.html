@@ -67,10 +67,13 @@
                 </div>
                 <div *nzSpaceItem>
                   @switch(index){ @case (0){
+
                     <app-data-inversion></app-data-inversion>
                   } @case (1){
                     <app-data-participe></app-data-participe>
-                  } @case (2){ } @case (3){ } @case (4){ } @case
+                  } @case (2){
+                    <app-data-cuentas-bancarias></app-data-cuentas-bancarias>
+                  } @case (3){ } @case (4){ } @case
                   (5){ } @case (6){ } }
                 </div>
               </nz-space>

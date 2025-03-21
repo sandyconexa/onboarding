@@ -8,6 +8,7 @@ import { DataInversionComponent } from './ui/pages/content/pages/data-inversion/
 import { NzSpaceModule } from 'ng-zorro-antd/space';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { DataParticipeComponent } from './ui/pages/content/pages/data-participe/data-participe.component';
+import { DataCuentasBancariasComponent } from "./ui/pages/content/pages/data-cuentas-bancarias/data-cuentas-bancarias.component";
 
 @Component({
   selector: 'app-root',
@@ -22,7 +23,8 @@ import { DataParticipeComponent } from './ui/pages/content/pages/data-participe/
     NzSpaceModule,
     NzButtonModule,
     DataParticipeComponent,
-  ],
+    DataCuentasBancariasComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
