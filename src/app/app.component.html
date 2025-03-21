@@ -1,10 +1,5 @@
 <div class="w-100 container">
-  <nz-space
-    class="content"
-    [nzSize]="56"
-    [nzDirection]="'vertical'"
-
-  >
+  <nz-space class="content" [nzSize]="56" [nzDirection]="'vertical'">
     <app-header *nzSpaceItem></app-header>
     <div class="px-20" *nzSpaceItem>
       <div class="content-main">
@@ -60,47 +55,75 @@
 
           <!-- TODO VISTAS RUTAS -->
           <div nz-col nzSpan="16">
-            <nz-space [nzSize]="24" nzDirection="vertical" class="w-100">
-              <nz-space [nzSize]="4" nzDirection="vertical" class="w-100" *nzSpaceItem>
+            <form
+              nz-form
+              [nzLayout]="'vertical'"
+              [formGroup]="formulario"
+              nz-space
+              [nzSize]="24"
+              nzDirection="vertical"
+              class="w-100"
+            >
+              <nz-space
+                [nzSize]="4"
+                nzDirection="vertical"
+                class="w-100"
+                *nzSpaceItem
+              >
                 <div *nzSpaceItem>
                   <span>Paso {{ index + 1 }}/7</span>
                 </div>
                 <div *nzSpaceItem>
                   @switch(index){ @case (0){
-
-                    <app-data-inversion></app-data-inversion>
+                  <app-data-inversion
+                    [inversion]="formulario.controls.inversion"
+                    [asesor]="formulario.controls.asesor"
+                  ></app-data-inversion>
                   } @case (1){
-                    <app-data-participe></app-data-participe>
+                  <app-data-participe></app-data-participe>
                   } @case (2){
                     <app-data-cuentas-bancarias></app-data-cuentas-bancarias>
-                  } @case (3){ } @case (4){ } @case
-                  (5){ } @case (6){ } }
+                  } @case (3){ } @case (4){ } @case (5){ } @case
+                  (6){ } }
                 </div>
               </nz-space>
-              <div nz-row [nzJustify]="index!=0?'space-between':'end'" *nzSpaceItem>
+              <div
+                nz-row
+                [nzJustify]="index != 0 ? 'space-between' : 'end'"
+                *nzSpaceItem
+              >
                 @if(index!=0){
-                    <div nz-col>
-                      <button nz-button nzSize="large" nzType="primary" (click)="retroceder()">
-                        <nz-icon nz-icon nzType="left" />
-                        <span>Anterior</span>
-                      </button>
-                    </div>
-                }
-                @if(index!=6){
-                    <div nz-col>
-                      <button nz-button nzSize="large" nzType="primary" (click)="avanzar()">
-                        <span>Siguiente</span>
-                        <nz-icon nz-icon nzType="right" />
-                      </button>
-                    </div>
+                <div nz-col>
+                  <button
+                    nz-button
+                    nzSize="large"
+                    nzType="primary"
+                    (click)="retroceder()"
+                  >
+                    <nz-icon nz-icon nzType="left" />
+                    <span>Anterior</span>
+                  </button>
+                </div>
+                } @if(index!=6){
+                <div nz-col>
+                  <button
+                    nz-button
+                    nzSize="large"
+                    nzType="primary"
+                    (click)="avanzar()"
+                  >
+                    <span>Siguiente</span>
+                    <nz-icon nz-icon nzType="right" />
+                  </button>
+                </div>
                 }
               </div>
-            </nz-space>
+            </form>
           </div>
         </div>
       </div>
     </div>
   </nz-space>
 
-  <app-footer ></app-footer>
+  <app-footer></app-footer>
 </div>
