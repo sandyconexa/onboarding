@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzIconModule } from 'ng-zorro-antd/icon';
@@ -43,10 +43,10 @@ export class DataInversionComponent implements OnInit {
 
   elegirTipoParticipe(tipo_participe: number) {
     this.inversion.controls.tipo_participe.setValue(tipo_participe);
-    
+
     console.log(tipo_participe);
   }
-  
+
   elegirTipoMoneda(tipo_moneda: number) {
     this.inversion.controls.moneda_inversion.setValue(tipo_moneda);
     console.log(tipo_moneda);
