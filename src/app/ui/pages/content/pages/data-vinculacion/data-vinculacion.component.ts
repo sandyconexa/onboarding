@@ -5,14 +5,13 @@ import { NzSpaceModule } from 'ng-zorro-antd/space';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzInputModule } from 'ng-zorro-antd/input';
 
-
 @Component({
-  selector: 'app-data-cuentas-bancarias',
+  selector: 'app-data-vinculacion',
   standalone: true,
   imports: [ NzFormModule, NzGridModule, NzSpaceModule, NzSelectModule, NzInputModule ],
-  templateUrl: './data-cuentas-bancarias.component.html',
-  styleUrl: './data-cuentas-bancarias.component.scss'
+  templateUrl: './data-vinculacion.component.html',
+  styleUrl: './data-vinculacion.component.scss'
 })
-export class DataCuentasBancariasComponent {
+export class DataVinculacionComponent {
 
 }

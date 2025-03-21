@@ -1,0 +1,39 @@
+<form
+  nz-form
+  [nzLayout]="'vertical'"
+  nz-space
+  [nzSize]="12"
+  nzDirection="vertical"
+  class="w-100"
+>
+  <div *nzSpaceItem>
+    <h2>Declaración Jurada de Origen de Fondos</h2>
+    <span>Declaración Jurada de Origen de Fondos. </span>
+  </div>
+
+  <!-- TIPO DE CUENTA -->
+  <div nz-row [nzGutter]="24" *nzSpaceItem>
+    <div nz-col [nzSpan]="24">
+      <nz-form-item>
+        <nz-form-label>Pais de Origen:</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your username!">
+          <input nz-input placeholder="input placeholder" />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+
+    <div nz-col [nzSpan]="12">
+      <nz-form-item>
+        <nz-form-label
+          >Declaro que el dinero es lícito y proviene de las siguientes fuentes:
+        </nz-form-label>
+        <nz-form-control nzErrorTip="Please input your username!">
+          <nz-radio-group>
+            <label nz-radio>Masculino</label>
+            <label nz-radio>Femenino</label>
+          </nz-radio-group>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+  </div>
+</form>

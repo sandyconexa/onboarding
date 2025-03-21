@@ -1,0 +1,55 @@
+<form
+  nz-form
+  [nzLayout]="'vertical'"
+  nz-space
+  [nzSize]="12"
+  nzDirection="vertical"
+  class="w-100"
+>
+  <div *nzSpaceItem>
+    <h2>Vinculación con CONEXA</h2>
+    <span>Vinculación con CONEXA ASSET MANAGEMENT S.A </span>
+  </div>
+
+  <!-- TIPO VINCULACIÓN -->
+  <div nz-row [nzGutter]="24" *nzSpaceItem>
+    <div nz-col [nzSpan]="12">
+      <nz-form-item>
+        <nz-form-label>Vinculación Laboral</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your username!">
+          <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a person">
+            <nz-option nzLabel="Trabajador" [nzValue]="1"></nz-option>
+            <nz-option nzLabel="Directivo" [nzValue]="2"></nz-option>
+            <nz-option
+              nzLabel="Pariente de Trabajador o Directivo"
+              [nzValue]="2"
+            ></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+  </div>
+
+  <div nz-row [nzGutter]="24" *nzSpaceItem>
+    <div nz-col [nzSpan]="12">
+      <nz-form-item>
+        <nz-form-label>DNI</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your username!">
+          <input nz-input placeholder="input placeholder" />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+  </div>
+
+  <div nz-row [nzGutter]="24" *nzSpaceItem>
+    <div nz-col [nzSpan]="12">
+      <nz-form-item>
+        <nz-form-label>Pariente de Trabajador o Directivo</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your username!">
+          <input nz-input placeholder="input placeholder" />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+  </div>
+
+</form>

@@ -20,6 +20,8 @@ import {
 import { FormularioForm } from './ui/core/formulario.form';
 import { InversionForm } from './ui/core/inversion.form';
 import { AsesorForm } from './ui/core/asesor.form';
+import { DataVinculacionComponent } from "./ui/pages/content/pages/data-vinculacion/data-vinculacion.component";
+import { DataFondosComponent } from "./ui/pages/content/pages/data-fondos/data-fondos.component";
 
 @Component({
   selector: 'app-root',
@@ -36,7 +38,9 @@ import { AsesorForm } from './ui/core/asesor.form';
     NzButtonModule,
     NzFormModule,
     DataParticipeComponent,
-    DataCuentasBancariasComponent
+    DataCuentasBancariasComponent,
+    DataVinculacionComponent,
+    DataFondosComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
